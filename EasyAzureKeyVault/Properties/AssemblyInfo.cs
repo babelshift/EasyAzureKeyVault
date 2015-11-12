@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EasyAzureKeyVault")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Provides some minor abstractions over a few Azure KeyVault and Azure ActiveDirectory API behaviors.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Justin Skiles")]
 [assembly: AssemblyProduct("EasyAzureKeyVault")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
