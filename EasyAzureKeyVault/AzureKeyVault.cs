@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.KeyVault.Core;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -14,6 +15,14 @@ namespace EasyAzureKeyVault
         private Dictionary<string, IKey> keyDictionary;
         private string clientId { get; set; }
         private string clientSecret { get; set; }
+
+        public static string SqlColumnEncryptionAzureKeyVaultProviderName
+        {
+            get
+            {
+                return SqlColumnEncryptionAzureKeyVaultProvider.ProviderName;
+            }
+        }
 
         /// <summary>
         /// Key resolver used during decryption of objects protected with Azure Key Vault keys.
@@ -74,6 +83,15 @@ namespace EasyAzureKeyVault
             keyDictionary.Add(keyUri, key);
 
             return key;
+        }
+
+        /// <summary>
+        /// Registers the AzureKeyVaultProvider to be used with Column Encryption in SQL Server (Always Encrypted).
+        /// </summary>
+        public SqlColumnEncryptionAzureKeyVaultProvider GetSqlColumnEncryptionAzureKeyVaultProvider()
+        {
+            SqlColumnEncryptionAzureKeyVaultProvider azureKeyVaultProvider = new SqlColumnEncryptionAzureKeyVaultProvider(GetTokenAsync);
+            return azureKeyVaultProvider;
         }
 
         /// <summary>
