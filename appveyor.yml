@@ -15,6 +15,7 @@ configuration: Release
 
 build:
   project: EasyAzureKeyVault.sln
+  publish_nuget: true
   
 cache:
   - packages -> **\packages.config
