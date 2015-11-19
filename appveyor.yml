@@ -15,3 +15,9 @@ configuration: Release
 
 build:
   project: EasyAzureKeyVault.sln
+  
+cache:
+  - packages -> **\packages.config
+  
+before_build:
+  - cmd: nuget restore
