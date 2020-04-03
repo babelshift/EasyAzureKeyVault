@@ -1,3 +1,2 @@
 # EasyAzureKeyVault
-[![Build status](https://ci.appveyor.com/api/projects/status/1ak2v37fv0eu2j2r?svg=true)](https://ci.appveyor.com/project/JustinSkiles/easyazurekeyvault)
-[![NuGet](https://img.shields.io/nuget/v/EasyAzureKeyVault.svg)](https://www.nuget.org/packages/EasyAzureKeyVault/)
+This library has been deprecated because the [Azure Storage SDK](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs) has been much improved.
